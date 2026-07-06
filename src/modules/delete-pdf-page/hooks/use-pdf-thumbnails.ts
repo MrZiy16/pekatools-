@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import * as pdfjsLib from "pdfjs-dist"
+import * as pdfjsLib from "pdfjs-dist";
 
 // Wajib di-set sebelum pakai pdfjs-dist di browser.
 // Worker file-nya di-load dari CDN unpkg, versi harus MATCH persis
@@ -47,7 +47,7 @@ export function usePdfThumbnails() {
                 await page.render({
                     canvasContext: ctx,
                     viewport,
-                    canvas,
+
                 }).promise
 
                 const thumbnailUrl = canvas.toDataURL("image/png")
