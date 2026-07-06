@@ -1,5 +1,10 @@
 import type { Metadata } from "next"
-import { DeletePdfTool } from "@/modules/delete-pdf-page/components/delete-pdf-tool"
+import dynamic from "next/dynamic"
+
+const DeletePdfTool = dynamic(
+    () => import("@/modules/delete-pdf-page/components/delete-pdf-tool").then((mod) => mod.DeletePdfTool),
+    { ssr: false }
+)
 
 export const metadata: Metadata = {
     title: "Delete PDF Page — Free Online Tool | PekaTools",
