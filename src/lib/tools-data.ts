@@ -10,6 +10,9 @@ import {
     FileUp,
     QrCode,
     ScanLine,
+    Scissors,
+    AppWindow,
+    LayoutGrid,
 } from "lucide-react"
 
 export type ToolCategory = "image" | "pdf" | "qr"
@@ -96,6 +99,22 @@ export const tools: Tool[] = [
         status: "live",
     },
     {
+        slug: "favicon-generator",
+        name: "Favicon Generator",
+        shortDescription: "Generate all standard favicon sizes from one image.",
+        category: "image",
+        icon: AppWindow,
+        status: "live",
+    },
+    {
+        slug: "image-grid",
+        name: "Image Grid / Collage",
+        shortDescription: "Combine multiple photos into a grid collage.",
+        category: "image",
+        icon: LayoutGrid,
+        status: "live",
+    },
+    {
         slug: "merge-pdf",
         name: "Merge PDF",
         shortDescription: "Combine multiple PDF files into one document.",
@@ -135,6 +154,14 @@ export const tools: Tool[] = [
         icon: ScanLine,
         status: "live",
     },
+    // {
+    //     slug: "remove-background",
+    //     name: "Remove Background",
+    //     shortDescription: "Remove image background automatically using AI.",
+    //     category: "image",
+    //     icon: Scissors, // tambahin import Scissors dari lucide-react di baris import atas
+    //     status: "live",
+    // },
 ]
 
 export function getToolsByCategory(category: ToolCategory): Tool[] {

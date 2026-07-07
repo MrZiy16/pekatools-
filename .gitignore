@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Experimental — not for production (licensing not cleared)
+src/modules/remove-background/
+src/app/tools/remove-background/
