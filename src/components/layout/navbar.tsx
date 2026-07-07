@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, ImageIcon, FileText, QrCode, ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -12,6 +13,7 @@ import {
     SheetTitle,
 } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
+import favicon from "@/app/faviconn.png"
 
 const navLinks = [
     { label: "Image Tools", href: "/tools#image", icon: ImageIcon },
@@ -19,14 +21,31 @@ const navLinks = [
     { label: "QR Tools", href: "/tools#qr", icon: QrCode },
 ]
 
+function BrandLogo() {
+    return (
+        <span className="flex items-center gap-2 font-semibold text-lg">
+            <Image
+                src={favicon}
+                alt=""
+                width={28}
+                height={28}
+                className="size-7"
+            />
+            <span>
+                <span className="text-primary">Peka</span>Tools
+            </span>
+        </span>
+    )
+}
+
 export function Navbar() {
     const [open, setOpen] = React.useState(false)
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
             <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
-                <Link href="/" className="flex items-center gap-2 font-semibold text-lg">
-                    <span className="text-primary">Peka</span>Tools
+                <Link href="/" className="flex items-center">
+                    <BrandLogo />
                 </Link>
 
                 <nav className="hidden md:flex items-center gap-6">
@@ -61,9 +80,7 @@ export function Navbar() {
                             <div className="flex flex-col h-full">
                                 {/* Header kecil di dalam sheet, konsisten sama navbar utama */}
                                 <div className="flex items-center h-16 px-5 border-b border-border">
-                                    <span className="font-semibold text-lg">
-                                        <span className="text-primary">Peka</span>Tools
-                                    </span>
+                                    <BrandLogo />
                                 </div>
 
                                 {/* Nav links jadi "row" yang jelas, bukan teks polos */}
